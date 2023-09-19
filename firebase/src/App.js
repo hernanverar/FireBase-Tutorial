@@ -10,15 +10,25 @@ function App() {
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(usersCollectionRef); 
-      console.log(data); 
+      setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id })));
     };
 
-    getUsers()
-  }, []);
+    getUsers();
+  }, [usersCollectionRef]);
 
-
-  return 
-    <div className="App"> </div>;
+  return (
+    <div className="App"> {
+      users.map((user) => {
+        return (
+          <div key={user.id}>
+            {" "}
+            <h1>Name: {user.Name}</h1>
+            <h1>Age: {user.Age}</h1>
+          </div>  
+        );
+      })}
+    </div>
+  );
 }
 
 export default App;
