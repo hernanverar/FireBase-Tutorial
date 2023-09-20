@@ -4,13 +4,13 @@ import { getFirestore } from "@firebase/firestore";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyClKIzB6pfzU_PbKQMj3y1D48qAjVjLZCE",
-  authDomain: "fir-tutorial-45610.firebaseapp.com",
-  projectId: "fir-tutorial-45610",
-  storageBucket: "fir-tutorial-45610.appspot.com",
-  messagingSenderId: "381564291931",
-  appId: "1:381564291931:web:27fd0b1588798334dbe87e",
-  measurementId: "G-9GL0XBCC5R"
+  apiKey: "AIzaSyAtN3iZLEkUzxAwaonvCKbEH9irX700ENM",
+  authDomain: "fir-tuto-69612.firebaseapp.com",
+  projectId: "fir-tuto-69612",
+  storageBucket: "fir-tuto-69612.appspot.com",
+  messagingSenderId: "53987764452",
+  appId: "1:53987764452:web:7c96f640325a932be1a4f1",
+  measurementId: "G-FV1K1GCTQ5"
 };
 
 
