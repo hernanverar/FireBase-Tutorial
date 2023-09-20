@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { db } from "./firebase-config";
+import { db, auth} from "./firebase-config";
 import {
   collection,
   getDocs,
@@ -14,9 +14,21 @@ function App() {
   const [newName, setNewName] = useState("");
   const [newAge, setNewAge] = useState(0);
   const [newOcupation, setNewOcupation] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async () => {
+    try {
+      await auth.singInWithEmailAndPassword(email, password);
+
+    } catch (error) {
+      console.error("error logging in", error);
+    }
+  };
 
   const [users, setUsers] = useState([]);
   const usersCollectionRef = collection(db, "users");
+
 
   const createUser = async () => {
     await addDoc(usersCollectionRef, {
@@ -48,6 +60,24 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Login</h1>
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(event) => setEmail(event.target.value)}
+      />
+
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
+      />
+      <button onClick={handleLogin}>Login</button>
+
+
+    <div className="App">
       <input
         placeholder="Name..."
         onChange={(event) => {
@@ -78,9 +108,9 @@ function App() {
         return (
           <div key={user.id}>
             {" "}
-            <h1>Name: {user.name}</h1>
-            <h1>Age: {user.age}</h1>
-            <h1>Ocupation: {user.ocupation}</h1>
+            <h1 className="name">Name: {user.name}</h1>
+            <h1 className="age">Age: {user.age}</h1>
+            <h1 className="ocupation">Ocupation: {user.ocupation}</h1>
             <button
               className="
             custom-button"
@@ -102,6 +132,7 @@ function App() {
           </div>
         );
       })}
+    </div>
     </div>
   );
 }
