@@ -3,16 +3,25 @@
   background-color: rgb(245, 248, 204);
 }
 
-.button1 {
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+.custom-button {
+  background-color: #95fa86;
+  padding: 4px 20px;
+  border-radius: 5px;
+
 }
+
+.create-button {
+  background-color: #95fa86;
+  padding: 4px 20px;
+  border-radius: 5px;
+}
+
+.delete-button {
+  background-color: #fc5252;
+  padding: 4px 20px;
+  border-radius: 5px;
+}
+
 
 
 

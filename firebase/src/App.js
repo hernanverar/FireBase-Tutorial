@@ -70,7 +70,10 @@ function App() {
         }}
       />
 
-      <button onClick={createUser}> Create User </button>
+      <button className="create-button" onClick={createUser}>
+        {" "}
+        Create User{" "}
+      </button>
       {users.map((user) => {
         return (
           <div key={user.id}>
@@ -79,6 +82,8 @@ function App() {
             <h1>Age: {user.age}</h1>
             <h1>Ocupation: {user.ocupation}</h1>
             <button
+              className="
+            custom-button"
               onClick={() => {
                 updateUser(user.id, user.age);
               }}
@@ -87,6 +92,7 @@ function App() {
               Increase age
             </button>
             <button
+              className="delete-button"
               onClick={() => {
                 deleteUser(user.id);
               }}
